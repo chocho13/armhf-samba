@@ -14,6 +14,8 @@ So let's create some directories :
 
     $ mkdir share config
 
+If you want setup specific samba config file you can place it under `config/smb.conf` if not you can avoid config directory creation and my [smb.conf](https://github.com/chocho13/armhf-samba/blob/master/config/smb.conf) will be used
+
 ... and start using this command:
 
     $ docker run -d \
@@ -22,7 +24,7 @@ So let's create some directories :
         -v $PWD/share:/media/storage \
         chocho13/armhf-samba
 
-... to have samaba server running default port 445 and sharing Storage on [smb://localhost/Storage](smb://localhost/Storage) (no user and password) with config in the following locations mounted:
+... to have samaba server running default port 445 and sharing Storage on [smb://localhost/Storage](smb://localhost/Storage) (no user and password) the following locations mounted:
 
 * `/config`: samba configuration files
 * `/share`: files
